@@ -39,7 +39,7 @@ For the first trials I did with the profiler, I could see in the Profiler Report
 I wrote an isolated inference.py script for deploying the model, within this script I configured the function input_fn which allows the user asking for inferences only passing an image's bytes stream. The functions take care of the image by transforming it to a tensor and also resizing it to match with the model's input.
 
 **TODO** Remember to provide a screenshot of the deployed active endpoint in Sagemaker.
-
+Working endpoint's screenshot in "pytorch_working_endpoint.png" file
 
 ## Standout Suggestions
 **TODO (Optional):** This is where you can provide information about any standout suggestions that you have attempted.
