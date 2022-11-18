@@ -19,9 +19,12 @@ What kind of model did you choose for this experiment and why? Give an overview 
 
 Remember that your README should:
 - Include a screenshot of completed training jobs
+![alt text](hyperparameter_tuning.PNG)
 - Logs metrics during the training process
+![alt text](log_metrics_training.PNG)
 - Tune at least two hyperparameters
 - Retrieve the best best hyperparameters from all your training jobs
+![alt text](best_model_hyperparameters.PNG)
 
 ## Debugging and Profiling
 First, it is necessary to configure the rules for both debugging and profiling. Then you have to configure the hooks for the training and test phase, you also have to attach the loss function to the hook. With the correct configurations all the debugging and profiling outputs will reside within s3 training job directory.
