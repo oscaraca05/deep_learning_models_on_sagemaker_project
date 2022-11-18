@@ -60,6 +60,7 @@ def test(model, test_loader, hook, loss_criterion):
             test_loss, correct, len(test_loader.dataset), 100.0 * correct / len(test_loader.dataset)
         )
     )
+    hook.save_scalar("accuracy", correct / len(test_loader.dataset))
 
 def train(model, train_loader, loss_criterion, optimizer, hook, epoch):
     '''
@@ -80,7 +81,7 @@ def train(model, train_loader, loss_criterion, optimizer, hook, epoch):
         loss = loss_criterion(output, target)
         loss.backward()
         optimizer.step()
-        if batch_idx % 10 == 0:
+        if batch_idx % 50 == 0:
             logger.info(
                 "Train Epoch: {} [{}/{} ({:.0f}%)] Loss: {:.6f}".format(
                     epoch,
@@ -122,8 +123,9 @@ def main(args):
     # ======================================================#
     # 4. Register the SMDebug hook to save output tensors. #
     # ======================================================#
-    hook = smd.Hook.create_from_json_file()
-    hook.register_hook(model)
+    import smdebug.pytorch as smd
+    hook=smd.get_hook(create_if_not_exists=True)
+    hook.register_module(model)
     
     '''
     TODO: Create your loss and optimizer

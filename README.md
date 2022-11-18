@@ -31,18 +31,22 @@ First, it is necessary to configure the rules for both debugging and profiling. 
 
 ### Results
 **TODO**: What are the results/insights did you get by profiling/debugging your model?
-First, we can see how the loss keeps decreasing throghout time, but we also can see a lower slope at the end, it suggests that we are reaching the necessary epochs for the model to converge.
+
+![alt text](loss_training_validation.PNG)
+Answer: First, we can see how the loss keeps decreasing throghout time, but we also can see a lower slope at the end, it suggests that we are reaching the necessary epochs for the model to converge. If we had set more epochs, we may had realize that it is not necesary to continue the training phase after the loss convergence.
 
 **TODO** Remember to provide the profiler html/pdf file in your submission.
+
+Answer: You can find the pdf profiler report in the file "profiler-report.html" at the root of the project.
 For the first trials I did with the profiler, I could see in the Profiler Report a lot of graphs showing memory and cpu usage, training and evaluation time spent, among other interesting stuff. I remember that the CPU usage was like 100% all the time but the memory usage was below 15%, with this info we may setup a cheaper host and get similar results in terms of time-performance. In the later trials, these graphs disappeared from the report but the table with the rules summary remains, I don't know why, I would appreciate feedback about that. It was a pretty challenging project and I would like to take the most of it.
 
 
 ## Model Deployment
 **TODO**: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
-I wrote an isolated inference.py script for deploying the model, within this script I configured the function input_fn which allows the user asking for inferences only passing an image's bytes stream. The functions take care of the image by transforming it to a tensor and also resizing it to match with the model's input.
+Answer: I wrote an isolated inference.py script for deploying the model, within this script I configured the function input_fn which allows the user asking for inferences only passing an image's bytes stream. The functions take care of the image by transforming it to a tensor and also resizing it to match with the model's input.
 
 **TODO** Remember to provide a screenshot of the deployed active endpoint in Sagemaker.
-Working endpoint's screenshot in "pytorch_working_endpoint.png" file
+![alt text](pytorch_working_endpoint.PNG)
 
 ## Standout Suggestions
 **TODO (Optional):** This is where you can provide information about any standout suggestions that you have attempted.
