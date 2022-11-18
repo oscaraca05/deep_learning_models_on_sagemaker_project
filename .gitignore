@@ -49,4 +49,5 @@ Thumbs.db
 *.wmv
 
 .ipynb_checkpoints
-chunks
+dogImages
+dogImagesSubset
